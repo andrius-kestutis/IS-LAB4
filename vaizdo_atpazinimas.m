@@ -6,17 +6,22 @@ clc;
 pavadinimas = 'apmokinimas8eil.jpg';
 pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8);   
 %%%%%%%%%%% ðalia atpaþinimo vaizdo reikia ávesti kiek eiluèiø raidþiø paveiksliuke yra
+disp('mokinimosi paveikliukas atidarytas');
+
 %% Atpa?intuvo k?rimas
 %% Development of character recognizer
 % po?ymiai i? celi¸ masyvo perkeliami ? matric?
 % take the features from cell-type variable and save into a matrix-type variable
 P = cell2mat(pozymiai_tinklo_mokymui);
 % sukuriama teising¸ atsakym¸ matrica: 11 raid?i¸, 8 eilut?s mokymui
-% create the matrices of correct answers for each line (number of matrices = number of symbol lines)
-T = [eye(8), eye(8), eye(8), eye(8), eye(8), eye(8), eye(8)];
+% create the matrices of correct answers for each line (number of matrices
+% = number of symbol lines)
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--8 eilutës po 23 raides-
+T = [eye(23), eye(23), eye(23), eye(23), eye(23), eye(23), eye(23), eye(23)];
 % sukuriamas SBF tinklas duotiems P ir T s?ry?iams
 % create an RBF network for classification with 13 neurons, and sigma = 1
-tinklas = newrb(P,T,0,1,16);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%tinklas = newrb(P,T,0,1,16);
+tinklas = newrb(P,T,0,1,13);
 % tinklas = newff(P,T,20);
 % tinklas = train(tinklas,P,T);
 %% Tinklo patikra | Test of the network (recognizer)
