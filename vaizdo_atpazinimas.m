@@ -92,7 +92,7 @@ disp(atsakymas)
 % % figure(7), text(0.1,0.5,atsakymas,'FontSize',38)
 %% ?od?io "KADA" po?ymi¸ i?skyrimas 
 %% Extract features of the test image
-pavadinimas = 'pav2.jpg';
+pavadinimas = 'pirmas.jpg';%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pirmas.jpg DEFENCE
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - ---èia ið kurio failo atpaþinti reikia
 %% Raid?i¸ atpa?inimas
@@ -168,7 +168,7 @@ end
 figure(8), text(0.1,0.5,atsakymas,'FontSize',38), axis off
 %% ?od?io "FIKCIJA" po?ymi¸ i?skyrimas 
 %% extract features for next/another test image
-pavadinimas = 'pav.jpg';
+pavadinimas = 'antras.jpg';   %%%%%%%%%%%%%%%%%%%%%%%%%%% antras.jpg TETA
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 
 %% Raid?i¸ atpa?inimas
