@@ -3,7 +3,7 @@ clear all;
 clc;
 %% raid?i¸ pavyzd?i¸ nuskaitymas ir po?ymi¸ skai?iavimas
 %% read the image with hand-written characters
-pavadinimas = 'train_data.jpg';
+pavadinimas = 'apmokinimas8eil.jpg';
 pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8);   
 %%%%%%%%%%% ğalia atpaşinimo vaizdo reikia ávesti kiek eiluèiø raidşiø paveiksliuke yra
 %% Atpa?intuvo k?rimas
@@ -36,9 +36,8 @@ raidziu_sk = size(P2,2);
 % we will save the result in variable 'atsakymas'
 atsakymas = [];
 for k = 1:raidziu_sk
-    switch b2(k)
-        case 1
-            % the symbol here should be the same as written first symbol in your image
+    switch b2(k)% the symbol here should be the same as written first symbol in your image
+        case 1 
             atsakymas = [atsakymas, 'A'];
         case 2
             atsakymas = [atsakymas, 'B'];
@@ -51,9 +50,40 @@ for k = 1:raidziu_sk
         case 6
             atsakymas = [atsakymas, 'F'];
         case 7
-            atsakymas = [atsakymas, 'T'];
+            atsakymas = [atsakymas, 'G'];
         case 8
-            atsakymas = [atsakymas, 'Q'];
+            atsakymas = [atsakymas, 'H'];
+        case 9
+            atsakymas = [atsakymas, 'I'];
+        case 10
+            atsakymas = [atsakymas, 'J'];
+        case 11
+            atsakymas = [atsakymas, 'K'];
+        case 12
+            atsakymas = [atsakymas, 'L'];
+        case 13
+            atsakymas = [atsakymas, 'M'];
+        case 14
+            atsakymas = [atsakymas, 'N'];
+        case 15
+            atsakymas = [atsakymas, 'O'];
+        case 16
+            atsakymas = [atsakymas, 'P'];
+        case 17
+            atsakymas = [atsakymas, 'R'];
+        case 18
+            atsakymas = [atsakymas, 'S'];
+        case 19
+            atsakymas = [atsakymas, 'T'];
+        case 20
+            atsakymas = [atsakymas, 'U'];
+        case 21
+            atsakymas = [atsakymas, 'V'];
+        case 22
+            atsakymas = [atsakymas, 'Z'];
+        case 23
+            atsakymas = [atsakymas, 'Y'];
+
     end
 end
 % pateikime rezultat? komandiniame lange
@@ -64,7 +94,7 @@ disp(atsakymas)
 %% Extract features of the test image
 pavadinimas = 'pav2.jpg';
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - ---èia iğ kurio failo atpaşinti reikia
 %% Raid?i¸ atpa?inimas
 %% Perform letter/symbol recognition
 % po?ymiai i? celi¸ masyvo perkeliami ? matric?
@@ -84,7 +114,7 @@ raidziu_sk = size(P2,2);
 atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
-        case 1
+        case 1 
             atsakymas = [atsakymas, 'A'];
         case 2
             atsakymas = [atsakymas, 'B'];
@@ -97,9 +127,40 @@ for k = 1:raidziu_sk
         case 6
             atsakymas = [atsakymas, 'F'];
         case 7
-            atsakymas = [atsakymas, 'T'];
+            atsakymas = [atsakymas, 'G'];
         case 8
-            atsakymas = [atsakymas, 'Q'];
+            atsakymas = [atsakymas, 'H'];
+        case 9
+            atsakymas = [atsakymas, 'I'];
+        case 10
+            atsakymas = [atsakymas, 'J'];
+        case 11
+            atsakymas = [atsakymas, 'K'];
+        case 12
+            atsakymas = [atsakymas, 'L'];
+        case 13
+            atsakymas = [atsakymas, 'M'];
+        case 14
+            atsakymas = [atsakymas, 'N'];
+        case 15
+            atsakymas = [atsakymas, 'O'];
+        case 16
+            atsakymas = [atsakymas, 'P'];
+        case 17
+            atsakymas = [atsakymas, 'R'];
+        case 18
+            atsakymas = [atsakymas, 'S'];
+        case 19
+            atsakymas = [atsakymas, 'T'];
+        case 20
+            atsakymas = [atsakymas, 'U'];
+        case 21
+            atsakymas = [atsakymas, 'V'];
+        case 22
+            atsakymas = [atsakymas, 'Z'];
+        case 23
+            atsakymas = [atsakymas, 'Y'];
+
     end
 end
 % pateikime rezultat? komandiniame lange
