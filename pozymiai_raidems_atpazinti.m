@@ -30,7 +30,7 @@ V_konturais = edge(uint8(V_dvejetainis));
 figure(2),imshow(V_konturais)
 % objektø kontûrø uþpildymas 
 % fill the contours
-se = strel('square',7); % struktûrinis elementas uþpildymui
+se = strel('square',7); % struktûrinis elementas uþpildymui  %%%%%%%%%%%%%%%%%bandom 9 vietoj 7 ar 9 (orig 7)
 V_uzpildyti = imdilate(V_konturais, se); 
 % rezultato atvaizdavimas
 % show the result
