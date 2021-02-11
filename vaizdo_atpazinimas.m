@@ -3,10 +3,11 @@ clear all;
 clc;
 %% raid?i¸ pavyzd?i¸ nuskaitymas ir po?ymi¸ skai?iavimas
 %% read the image with hand-written characters
-pavadinimas = 'apmokinimas8eil.jpg';
-pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8);   
+pavadinimas = 'apmokinimas3.jpg';
+disp('mokinimosi paveiksliukas atidarytas');
+pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas,8);   
 %%%%%%%%%%% ğalia atpaşinimo vaizdo reikia ávesti kiek eiluèiø raidşiø paveiksliuke yra
-disp('mokinimosi paveikliukas atidarytas');
+disp('mokinimosi paveikliukas atidarytas ir apsimokinta');
 
 %% Atpa?intuvo k?rimas
 %% Development of character recognizer
@@ -16,8 +17,8 @@ P = cell2mat(pozymiai_tinklo_mokymui);
 % sukuriama teising¸ atsakym¸ matrica: 11 raid?i¸, 8 eilut?s mokymui
 % create the matrices of correct answers for each line (number of matrices
 % = number of symbol lines)
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--8 eilutës po 23 raides-
-T = [eye(23), eye(23), eye(23), eye(23), eye(23), eye(23), eye(23), eye(23)];
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--8 eilutës po 26 raides-
+T = [eye(26), eye(26), eye(26), eye(26), eye(26), eye(26), eye(26), eye(26)];
 % sukuriamas SBF tinklas duotiems P ir T s?ry?iams
 % create an RBF network for classification with 13 neurons, and sigma = 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%tinklas = newrb(P,T,0,1,16);
@@ -42,53 +43,62 @@ raidziu_sk = size(P2,2);
 atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)% the symbol here should be the same as written first symbol in your image
-        case 1 
+        case 1  
             atsakymas = [atsakymas, 'A'];
-        case 2
+        case 2  
             atsakymas = [atsakymas, 'B'];
-        case 3
+        case 3  
             atsakymas = [atsakymas, 'C'];
-        case 4
+        case 4  
             atsakymas = [atsakymas, 'D'];
-        case 5
+        case 5  
             atsakymas = [atsakymas, 'E'];
-        case 6
+        case 6  
             atsakymas = [atsakymas, 'F'];
-        case 7
+        case 7  
             atsakymas = [atsakymas, 'G'];
-        case 8
+        case 8  
             atsakymas = [atsakymas, 'H'];
-        case 9
+        case 9  
             atsakymas = [atsakymas, 'I'];
-        case 10
+        case 10 
             atsakymas = [atsakymas, 'J'];
-        case 11
+        case 11 
             atsakymas = [atsakymas, 'K'];
-        case 12
+        case 12 
             atsakymas = [atsakymas, 'L'];
-        case 13
+        case 13 
             atsakymas = [atsakymas, 'M'];
-        case 14
+        case 14 
             atsakymas = [atsakymas, 'N'];
-        case 15
+        case 15 
             atsakymas = [atsakymas, 'O'];
-        case 16
+        case 16 
             atsakymas = [atsakymas, 'P'];
-        case 17
+        case 17 
+            atsakymas = [atsakymas, 'Q'];
+        case 18 
             atsakymas = [atsakymas, 'R'];
-        case 18
+        case 19 
             atsakymas = [atsakymas, 'S'];
-        case 19
+        case 20 
             atsakymas = [atsakymas, 'T'];
-        case 20
+        case 21 
             atsakymas = [atsakymas, 'U'];
-        case 21
+        case 22 
             atsakymas = [atsakymas, 'V'];
-        case 22
-            atsakymas = [atsakymas, 'Z'];
-        case 23
+        case 23 
+            atsakymas = [atsakymas, 'W'];
+        case 24 
+            atsakymas = [atsakymas, 'X'];
+        case 25 
             atsakymas = [atsakymas, 'Y'];
-
+        case 26 
+            atsakymas = [atsakymas, 'Z'];
+            
+            
+            
+            
     end
 end
 % pateikime rezultat? komandiniame lange
@@ -97,9 +107,12 @@ disp(atsakymas)
 % % figure(7), text(0.1,0.5,atsakymas,'FontSize',38)
 %% ?od?io "KADA" po?ymi¸ i?skyrimas 
 %% Extract features of the test image
-pavadinimas = 'pirmas.jpg';%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pirmas.jpg DEFENCE
+%%%%%%
+pavadinimas = 'pirmas3.jpg';%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pirmas3.jpg TOTO
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% - ---èia iğ kurio failo atpaşinti reikia
+disp('atidarome pirmà paveiksliukà atpaşinimui');
+%%
 %% Raid?i¸ atpa?inimas
 %% Perform letter/symbol recognition
 % po?ymiai i? celi¸ masyvo perkeliami ? matric?
@@ -119,52 +132,59 @@ raidziu_sk = size(P2,2);
 atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
-        case 1 
+        case 1  
             atsakymas = [atsakymas, 'A'];
-        case 2
+        case 2  
             atsakymas = [atsakymas, 'B'];
-        case 3
+        case 3  
             atsakymas = [atsakymas, 'C'];
-        case 4
+        case 4  
             atsakymas = [atsakymas, 'D'];
-        case 5
+        case 5  
             atsakymas = [atsakymas, 'E'];
-        case 6
+        case 6  
             atsakymas = [atsakymas, 'F'];
-        case 7
+        case 7  
             atsakymas = [atsakymas, 'G'];
-        case 8
+        case 8  
             atsakymas = [atsakymas, 'H'];
-        case 9
+        case 9  
             atsakymas = [atsakymas, 'I'];
-        case 10
+        case 10 
             atsakymas = [atsakymas, 'J'];
-        case 11
+        case 11 
             atsakymas = [atsakymas, 'K'];
-        case 12
+        case 12 
             atsakymas = [atsakymas, 'L'];
-        case 13
+        case 13 
             atsakymas = [atsakymas, 'M'];
-        case 14
+        case 14 
             atsakymas = [atsakymas, 'N'];
-        case 15
+        case 15 
             atsakymas = [atsakymas, 'O'];
-        case 16
+        case 16 
             atsakymas = [atsakymas, 'P'];
-        case 17
+        case 17 
+            atsakymas = [atsakymas, 'Q'];
+        case 18 
             atsakymas = [atsakymas, 'R'];
-        case 18
+        case 19 
             atsakymas = [atsakymas, 'S'];
-        case 19
+        case 20 
             atsakymas = [atsakymas, 'T'];
-        case 20
+        case 21 
             atsakymas = [atsakymas, 'U'];
-        case 21
+        case 22 
             atsakymas = [atsakymas, 'V'];
-        case 22
-            atsakymas = [atsakymas, 'Z'];
-        case 23
+        case 23 
+            atsakymas = [atsakymas, 'W'];
+        case 24 
+            atsakymas = [atsakymas, 'X'];
+        case 25 
             atsakymas = [atsakymas, 'Y'];
+        case 26 
+            atsakymas = [atsakymas, 'Z'];
+            
 
     end
 end
@@ -173,9 +193,9 @@ end
 figure(8), text(0.1,0.5,atsakymas,'FontSize',38), axis off
 %% ?od?io "FIKCIJA" po?ymi¸ i?skyrimas 
 %% extract features for next/another test image
-pavadinimas = 'antras.jpg';   %%%%%%%%%%%%%%%%%%%%%%%%%%% antras.jpg TETA
+pavadinimas = 'antras3.jpg';   %%%%%%%%%%%%%%%%%%%%%%%%%%% antras.jpg AHA
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
-
+disp('atidarome antrà paveiksliukà atpaşinimui');
 %% Raid?i¸ atpa?inimas
 % po?ymiai i? celi¸ masyvo perkeliami ? matric?
 P2 = cell2mat(pozymiai_patikrai);
@@ -190,52 +210,60 @@ raidziu_sk = size(P2,2);
 atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
-        case 1 
+        case 1  
             atsakymas = [atsakymas, 'A'];
-        case 2
+        case 2  
             atsakymas = [atsakymas, 'B'];
-        case 3
+        case 3  
             atsakymas = [atsakymas, 'C'];
-        case 4
+        case 4  
             atsakymas = [atsakymas, 'D'];
-        case 5
+        case 5  
             atsakymas = [atsakymas, 'E'];
-        case 6
+        case 6  
             atsakymas = [atsakymas, 'F'];
-        case 7
+        case 7  
             atsakymas = [atsakymas, 'G'];
-        case 8
+        case 8  
             atsakymas = [atsakymas, 'H'];
-        case 9
+        case 9  
             atsakymas = [atsakymas, 'I'];
-        case 10
+        case 10 
             atsakymas = [atsakymas, 'J'];
-        case 11
+        case 11 
             atsakymas = [atsakymas, 'K'];
-        case 12
+        case 12 
             atsakymas = [atsakymas, 'L'];
-        case 13
+        case 13 
             atsakymas = [atsakymas, 'M'];
-        case 14
+        case 14 
             atsakymas = [atsakymas, 'N'];
-        case 15
+        case 15 
             atsakymas = [atsakymas, 'O'];
-        case 16
+        case 16 
             atsakymas = [atsakymas, 'P'];
-        case 17
+        case 17 
+            atsakymas = [atsakymas, 'Q'];
+        case 18 
             atsakymas = [atsakymas, 'R'];
-        case 18
+        case 19 
             atsakymas = [atsakymas, 'S'];
-        case 19
+        case 20 
             atsakymas = [atsakymas, 'T'];
-        case 20
+        case 21 
             atsakymas = [atsakymas, 'U'];
-        case 21
+        case 22 
             atsakymas = [atsakymas, 'V'];
-        case 22
-            atsakymas = [atsakymas, 'Z'];
-        case 23
+        case 23 
+            atsakymas = [atsakymas, 'W'];
+        case 24 
+            atsakymas = [atsakymas, 'X'];
+        case 25 
             atsakymas = [atsakymas, 'Y'];
+        case 26 
+            atsakymas = [atsakymas, 'Z'];
+            
+
     end
 end
 % pateikime rezultat? komandiniame lange
